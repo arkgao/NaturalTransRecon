@@ -3,7 +3,7 @@ This is the official implementation of the paper "Transparent Object Reconstruct
 
 ![](asset/teaser.jpg)
 
-## [Project page] | [Paper] TODO
+## [Project page](https://arkgao.github.io/NaturalTransRecon/) | [Paper](docs/pdf/main_typofixed.pdf)
 # Usage
 
 ## Setup
@@ -100,7 +100,7 @@ For real data, we use a script to locate the plane and transfer it to z=0. Then 
 For reference and comparasion, we provide all our results [here](https://drive.google.com/drive/folders/1Fotb4KSm-aH-CAvHHPTlCVLmTFvgWRvr?usp=drive_link).
 
 # Acknowledgements
-This repository is heavily based on NeuS (TODO) and Geo-NeuS(TODO). We thank all the authors for their excellent work and sharing great codes. And we also very grateful for the open-source mesh from [Wu et al.](https://vcc.tech/research/2018/FRT) and [DRT](https://vcc.tech/research/2020/DRT).
+This repository is heavily based on [NeuS](https://github.com/Totoro97/NeuS) and [Geo-NeuS](https://github.com/GhiXu/Geo-Neus). We thank all the authors for their excellent work and sharing great codes. And we also very grateful for the open-source mesh from [Wu et al.](https://vcc.tech/research/2018/FRT) and [DRT](https://vcc.tech/research/2020/DRT).
 
 # Citation
 ```
