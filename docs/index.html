@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Transparent Object Reconstruction via Implicit Differentiable Refraction Rendering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #e4e4e4;
+            color: #000;
+            margin-bottom: 30px;
+        }
+        
+        .container {
+            margin-bottom: 50px;
+        }
+        
+        .paper-content {
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            margin-bottom: 20px;
+        }
+        
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        h2,
+        h3 {
+            text-align: center;
+        }
+        
+        #Video {
+            height: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Transparent Object Reconstruction</h1>
+        <h1>via Implicit Differentiable Refraction Rendering</h1>
+        <h4>SIGGRAPH Aisa’23 Conference Proceedings</h4>
+        <h6>
+            Fangzhou Gao, <a href="https://klkjjhjkhjhg.github.io" target="_blank">Lianghao Zhang</a>,
+            <a href="https://cgliwang.github.io" target="_blank">Li Wang</a> , Jiamin Cheng, <a href="http://cic.tju.edu.cn/faculty/zhangjiawan/index.htm" target="_blank">Jiawan Zhang</a>
+        </h6>
+        <a href="http://cic.tju.edu.cn/" target="_blank">College of Intelligence and Computing, Tianjin University</a>
+    </div>
+
+    <div class="container">
+        <div class="paper-content">
+            <h2>Abstract</h2>
+            <hr style="margin-top:0px">
+            <p>
+                Reconstructing the geometry of transparent objects has been a long-standing challenge. Existing methods rely on complex setups, such as manual annotation or darkroom conditions, to obtain object silhouettes and usually require controlled environments
+                with designed patterns to infer ray-background correspondence. However, these intricate arrangements limit the practical application for common users. In this paper, we significantly simplify the setups and present a novel method that
+                reconstructs transparent objects in unknown natural scenes without manual assistance. Our method incorporates two key technologies. Firstly, we introduce a volume rendering-based method that estimates object silhouettes by projecting the
+                3D neural field onto 2D images. This automated process yields highly accurate multi-view object silhouettes from images captured in natural scenes. Secondly, we propose transparent object optimization through differentiable refraction
+                rendering with the neural SDF field, enabling us to optimize the refraction ray based on color rather than explicit ray-background correspondence. Additionally, our optimization includes a ray sampling method to supervise the object silhouette
+                at a low computational cost. Extensive experiments and comparisons demonstrate that our method produces high-quality results while offering much more convenient setups.
+            </p>
+            <div class="card-body" style="text-align: center;">
+                <button type="button" class="btn btn-dark" onclick="downloadPaper()">Paper (typo fixed)</button>
+                <button type="button" class="btn btn-dark" onclick="downloadSupplementary()">Supplementary</button>
+                <button type="button" class="btn btn-dark">Code (Coming soon)</button>
+                <button type="button" class="btn btn-dark">Video (Coming soon)</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Pipeline</h3>
+                <hr style="margin-top:0px">
+                <img class="image" src="imgs/overview.jpg">
+                <p>
+                    The overview of our method. We first adopt neural volume rendering to recover the entire scene and estimate the object silhouettes by projecting the neural field back to input views. Then we reconstruct the object's shape which refracts the same color
+                    as input images through implicit refraction rendering. We also utilize estimated silhouettes to regularize the object's shape with our designed ray sampling method.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Capture Setup and Some Results</h3>
+                <hr style="margin-top:0px">
+                <img class="image" src="imgs/teaser.jpg">
+                <p>
+                    For a transparent object positioned on an arbitrary planar surface, our method solely relies on its multi-view RGB images as input to achieve high-precision geometry reconstruction. On the right side, we present the reconstructed shape and render it as
+                    a transparent object in a new environment.
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="card">
+            <h3 class="card-title">Citation</h3>
+            <hr style="margin-top:0px">
+            <pre style="background-color: #eeeeee">
+                <code>
+                    @article{Zhang2023PlanarLighting,
+                        author = {Lianghao Zhang, Fangzhou Gao, Li Wang, Minjing Yu, Jiamin Cheng, Jiawan Zhang},
+                        title   = {Deep SVBRDF Estimation from Single Image under Learned Planar Lighting},
+                        doi = {10.1145/3588432.3591559},
+                        booktitle = {ACM SIGGRAPH 2023 Conference Proceedings},
+                        year = {2023},
+                        series = {SIGGRAPH '23},
+                    }
+                </code>
+            </pre>
+        </div> -->
+    </div>
+
+    <script>
+        function downloadPaper() {
+            var pdfPath = "pdf/main_typofixed.pdf";
+            var link = document.createElement('a');
+            link.href = pdfPath;
+            link.target = "_blank";
+            link.download = "main_typofixed.pdf";
+            link.click();
+        }
+
+
+        function downloadSupplementary() {
+            // Replace "path-to-your-pdf.pdf" with the actual path to your PDF file
+            var pdfPath = "pdf/supplementary.pdf";
+            var link = document.createElement('a');
+            link.href = pdfPath;
+            link.target = "_blank";
+            link.download = "supplementary.pdf";
+            link.click();
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
