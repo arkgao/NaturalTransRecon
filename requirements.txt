@@ -1,0 +1,9 @@
+kaolin
+matplotlib
+numpy
+opencv_python
+pyhocon
+PyMCubes
+scipy
+tqdm
+trimesh
