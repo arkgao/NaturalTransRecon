@@ -16,7 +16,7 @@ This is the official implementation of the paper "Transparent Object Reconstruct
     ```
 
 ## Download Datasets
-The dataset and our results can be downloaded from [here](https://drive.google.com/drive/folders/1Fotb4KSm-aH-CAvHHPTlCVLmTFvgWRvr?usp=drive_link)
+The dataset and our results can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1Fotb4KSm-aH-CAvHHPTlCVLmTFvgWRvr?usp=drive_link)
 
 The data structure should be like:
 ```
@@ -97,7 +97,7 @@ Note that all planes in synthetic data are set as z=0, so that we can conviently
 For real data, we use a script to locate the plane and transfer it to z=0. Then it can be compatible with our program. [Here is the guidance for processing real data](real_data_process/README.md)
 
 # Our results
-For reference and comparasion, we provide all our results [here](https://drive.google.com/drive/folders/1Fotb4KSm-aH-CAvHHPTlCVLmTFvgWRvr?usp=drive_link).
+For reference and comparasion, we provide all our results in [Google Drive](https://drive.google.com/drive/folders/1Fotb4KSm-aH-CAvHHPTlCVLmTFvgWRvr?usp=drive_link).
 
 # Acknowledgements
 This repository is heavily based on [NeuS](https://github.com/Totoro97/NeuS) and [Geo-NeuS](https://github.com/GhiXu/Geo-Neus). We thank all the authors for their excellent work and sharing great codes. And we also very grateful for the open-source mesh from [Wu et al.](https://vcc.tech/research/2018/FRT) and [DRT](https://vcc.tech/research/2020/DRT).

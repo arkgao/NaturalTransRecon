@@ -1,4 +1,4 @@
-# Precess Real Data 
+# Process Real Data 
 
 This is the script for processing the real data.
 
